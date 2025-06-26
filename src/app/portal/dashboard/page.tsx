@@ -1,25 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, BookOpen, Video } from "lucide-react";
+import { ArrowLeft, BookOpen, Video } from "lucide-react";
 import Link from "next/link";
 
 const enrolledCourses = [
-  { id: '1', title: 'Advanced Web Development', progress: 75, nextLecture: 'Tomorrow, 10:00 AM' },
-  { id: '4', title: 'UI/UX Design Principles', progress: 40, nextLecture: 'Wednesday, 2:00 PM' },
+  { id: '1', title: 'تطوير الويب المتقدم', progress: 75, nextLecture: 'غداً، الساعة 10:00 صباحاً' },
+  { id: '4', title: 'مبادئ تصميم واجهة المستخدم وتجربة المستخدم', progress: 40, nextLecture: 'الأربعاء، الساعة 2:00 مساءً' },
 ];
 
 export default function StudentDashboardPage() {
   return (
     <div className="space-y-6">
-      <h2 className="font-headline text-3xl font-semibold">Welcome Back, Student!</h2>
+      <h2 className="font-headline text-3xl font-semibold">مرحباً بعودتك يا طالب!</h2>
       <div className="grid gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle className="font-headline flex items-center gap-2">
               <BookOpen className="w-5 h-5" />
-              My Courses in Progress
+              دوراتي قيد التقدم
             </CardTitle>
-            <CardDescription>Continue your learning journey.</CardDescription>
+            <CardDescription>واصل رحلتك التعليمية.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             {enrolledCourses.map(course => (
@@ -34,7 +34,7 @@ export default function StudentDashboardPage() {
               </div>
             ))}
             <Button variant="outline" className="w-full" asChild>
-                <Link href="/portal/courses">View All Courses <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                <Link href="/portal/courses">عرض كل الدورات <ArrowLeft className="mr-2 h-4 w-4" /></Link>
             </Button>
           </CardContent>
         </Card>
@@ -42,9 +42,9 @@ export default function StudentDashboardPage() {
           <CardHeader>
             <CardTitle className="font-headline flex items-center gap-2">
               <Video className="w-5 h-5" />
-              Upcoming Live Lectures
+              المحاضرات المباشرة القادمة
             </CardTitle>
-            <CardDescription>Don't miss your next class.</CardDescription>
+            <CardDescription>لا تفوت محاضرتك القادمة.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
             {enrolledCourses.map(course => (
@@ -54,7 +54,7 @@ export default function StudentDashboardPage() {
                         <p className="text-sm text-muted-foreground">{course.nextLecture}</p>
                     </div>
                     <Button size="sm" asChild>
-                        <Link href={`/portal/live/${course.id}`}>Join Now</Link>
+                        <Link href={`/portal/live/${course.id}`}>انضم الآن</Link>
                     </Button>
                 </div>
             ))}

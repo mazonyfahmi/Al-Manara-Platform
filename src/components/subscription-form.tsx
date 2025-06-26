@@ -24,13 +24,14 @@ import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { useToast } from '@/hooks/use-toast';
 import { handleSubscription } from '@/lib/actions';
+import { ar } from 'date-fns/locale';
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
-  email: z.string().email({ message: 'Please enter a valid email address.' }),
-  phone: z.string().min(10, { message: 'Phone number must be at least 10 digits.' }),
+  name: z.string().min(2, { message: 'يجب أن يتكون الاسم من حرفين على الأقل.' }),
+  email: z.string().email({ message: 'الرجاء إدخال عنوان بريد إلكتروني صالح.' }),
+  phone: z.string().min(10, { message: 'يجب أن يتكون رقم الهاتف من 10 أرقام على الأقل.' }),
   startDate: z.date({
-    required_error: 'A preferred start date is required.',
+    required_error: 'تاريخ البدء المفضل مطلوب.',
   }),
 });
 
@@ -50,14 +51,14 @@ export function SubscriptionForm() {
     const result = await handleSubscription(values);
     if (result.success) {
       toast({
-        title: 'Subscription Successful!',
-        description: 'Thank you for subscribing. We will contact you shortly with more details.',
+        title: 'تم الاشتراك بنجاح!',
+        description: 'شكرًا لاشتراكك. سنتصل بك قريبًا لمزيد من التفاصيل.',
       });
       form.reset();
     } else {
       toast({
         variant: 'destructive',
-        title: 'Subscription Failed',
+        title: 'فشل الاشتراك',
         description: result.message,
       });
     }
@@ -71,9 +72,9 @@ export function SubscriptionForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Full Name</FormLabel>
+              <FormLabel>الاسم الكامل</FormLabel>
               <FormControl>
-                <Input placeholder="e.g. John Doe" {...field} />
+                <Input placeholder="مثال: جون دو" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -84,7 +85,7 @@ export function SubscriptionForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email Address</FormLabel>
+              <FormLabel>البريد الإلكتروني</FormLabel>
               <FormControl>
                 <Input type="email" placeholder="e.g. john.doe@example.com" {...field} />
               </FormControl>
@@ -97,9 +98,9 @@ export function SubscriptionForm() {
           name="phone"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Phone Number</FormLabel>
+              <FormLabel>رقم الهاتف</FormLabel>
               <FormControl>
-                <Input type="tel" placeholder="e.g. +1 234 567 8900" {...field} />
+                <Input type="tel" placeholder="مثال: 9665xxxxxxx+" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -110,7 +111,7 @@ export function SubscriptionForm() {
           name="startDate"
           render={({ field }) => (
             <FormItem className="flex flex-col">
-              <FormLabel>Preferred Start Date</FormLabel>
+              <FormLabel>تاريخ البدء المفضل</FormLabel>
               <Popover>
                 <PopoverTrigger asChild>
                   <FormControl>
@@ -122,11 +123,11 @@ export function SubscriptionForm() {
                       )}
                     >
                       {field.value ? (
-                        format(field.value, 'PPP')
+                        format(field.value, 'PPP', { locale: ar })
                       ) : (
-                        <span>Pick a date</span>
+                        <span>اختر تاريخًا</span>
                       )}
-                      <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                      <CalendarIcon className="mr-auto h-4 w-4 opacity-50" />
                     </Button>
                   </FormControl>
                 </PopoverTrigger>
@@ -139,6 +140,7 @@ export function SubscriptionForm() {
                       date < new Date() || date < new Date('1900-01-01')
                     }
                     initialFocus
+                    locale={ar}
                   />
                 </PopoverContent>
               </Popover>
@@ -147,7 +149,7 @@ export function SubscriptionForm() {
           )}
         />
         <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
-          {form.formState.isSubmitting ? 'Submitting...' : 'Subscribe Now'}
+          {form.formState.isSubmitting ? 'جارٍ الإرسال...' : 'اشترك الآن'}
         </Button>
       </form>
     </Form>

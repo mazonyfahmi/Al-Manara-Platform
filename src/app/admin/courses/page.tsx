@@ -7,12 +7,12 @@ import type { Course } from "@/lib/types";
 import { MoreHorizontal, PlusCircle, PlayCircle, StopCircle } from "lucide-react";
 
 const mockCourses: Omit<Course, 'aiHint' | 'longDescription' | 'description' | 'imageUrl'>[] = [
-    { id: '1', title: 'Advanced Web Development', instructor: 'Dr. Evelyn Reed', duration: '12 Weeks' },
-    { id: '2', title: 'Introduction to Data Science', instructor: 'Prof. Kenji Tanaka', duration: '8 Weeks' },
-    { id: '3', title: 'Digital Marketing Fundamentals', instructor: 'Aisha Khan', duration: '6 Weeks' },
-    { id: '4', title: 'UI/UX Design Principles', instructor: 'Carlos Rodriguez', duration: '10 Weeks' },
-    { id: '5', title: 'Cybersecurity for Beginners', instructor: 'Ben Carter', duration: '8 Weeks' },
-    { id: '6', title: 'Project Management Professional (PMP)', instructor: 'Olivia Chen', duration: '14 Weeks' },
+    { id: '1', title: 'تطوير الويب المتقدم', instructor: 'د. إيفلين ريد', duration: '12 أسبوعًا' },
+    { id: '2', title: 'مقدمة في علم البيانات', instructor: 'أ. كينجي تاناكا', duration: '8 أسابيع' },
+    { id: '3', title: 'أساسيات التسويق الرقمي', instructor: 'عائشة خان', duration: '6 أسابيع' },
+    { id: '4', title: 'مبادئ تصميم واجهة المستخدم وتجربة المستخدم', instructor: 'كارلوس رودريغيز', duration: '10 أسابيع' },
+    { id: '5', title: 'الأمن السيبراني للمبتدئين', instructor: 'بن كارتر', duration: '8 أسابيع' },
+    { id: '6', title: 'محترف إدارة المشاريع (PMP)', instructor: 'أوليفيا تشين', duration: '14 أسبوعًا' },
 ];
 
 export default function AdminCoursesPage() {
@@ -21,12 +21,12 @@ export default function AdminCoursesPage() {
             <CardHeader>
                 <div className="flex items-center justify-between">
                     <div>
-                        <CardTitle className="font-headline">Courses</CardTitle>
-                        <CardDescription>Manage courses and their content.</CardDescription>
+                        <CardTitle className="font-headline">الدورات</CardTitle>
+                        <CardDescription>إدارة الدورات ومحتواها.</CardDescription>
                     </div>
                     <Button>
-                        <PlusCircle className="mr-2 h-4 w-4" />
-                        Add Course
+                        <PlusCircle className="ml-2 h-4 w-4" />
+                        إضافة دورة
                     </Button>
                 </div>
             </CardHeader>
@@ -34,11 +34,11 @@ export default function AdminCoursesPage() {
                 <Table>
                     <TableHeader>
                         <TableRow>
-                            <TableHead>Title</TableHead>
-                            <TableHead>Instructor</TableHead>
-                            <TableHead>Duration</TableHead>
-                            <TableHead>Live Status</TableHead>
-                            <TableHead><span className="sr-only">Actions</span></TableHead>
+                            <TableHead>العنوان</TableHead>
+                            <TableHead>المحاضر</TableHead>
+                            <TableHead>المدة</TableHead>
+                            <TableHead>حالة البث المباشر</TableHead>
+                            <TableHead><span className="sr-only">الإجراءات</span></TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -49,7 +49,7 @@ export default function AdminCoursesPage() {
                                 <TableCell>{course.duration}</TableCell>
                                 <TableCell>
                                     <Badge variant={index % 2 === 0 ? "destructive" : "secondary"}>
-                                        {index % 2 === 0 ? "Not Live" : "Live"}
+                                        {index % 2 === 0 ? "غير مباشر" : "مباشر"}
                                     </Badge>
                                 </TableCell>
                                 <TableCell>
@@ -60,21 +60,21 @@ export default function AdminCoursesPage() {
                                                 <span className="sr-only">Toggle menu</span>
                                             </Button>
                                         </DropdownMenuTrigger>
-                                        <DropdownMenuContent align="end">
-                                            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                                            <DropdownMenuItem>Edit Course</DropdownMenuItem>
-                                            <DropdownMenuItem>View Enrollments</DropdownMenuItem>
+                                        <DropdownMenuContent align="start">
+                                            <DropdownMenuLabel>الإجراءات</DropdownMenuLabel>
+                                            <DropdownMenuItem>تعديل الدورة</DropdownMenuItem>
+                                            <DropdownMenuItem>عرض المسجلين</DropdownMenuItem>
                                             <DropdownMenuSeparator />
                                             <DropdownMenuItem>
-                                                <PlayCircle className="mr-2 h-4 w-4" />
-                                                Start Live Lecture
+                                                <PlayCircle className="ml-2 h-4 w-4" />
+                                                بدء محاضرة مباشرة
                                             </DropdownMenuItem>
                                             <DropdownMenuItem>
-                                                <StopCircle className="mr-2 h-4 w-4" />
-                                                Stop Live Lecture
+                                                <StopCircle className="ml-2 h-4 w-4" />
+                                                إيقاف محاضرة مباشرة
                                             </DropdownMenuItem>
                                             <DropdownMenuSeparator />
-                                            <DropdownMenuItem className="text-destructive">Delete Course</DropdownMenuItem>
+                                            <DropdownMenuItem className="text-destructive">حذف الدورة</DropdownMenuItem>
                                         </DropdownMenuContent>
                                     </DropdownMenu>
                                 </TableCell>

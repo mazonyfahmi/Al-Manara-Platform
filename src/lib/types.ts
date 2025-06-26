@@ -24,5 +24,5 @@ export type Subscription = {
   phone: string;
   course: string;
   requestedDate: string;
-  status: 'Pending' | 'Approved' | 'Rejected';
+  status: 'قيد الانتظار' | 'مقبول' | 'مرفوض';
 };

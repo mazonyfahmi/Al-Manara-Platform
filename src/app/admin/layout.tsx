@@ -36,42 +36,42 @@ export default function AdminLayout({
 }) {
   return (
     <SidebarProvider>
-      <Sidebar>
+      <Sidebar side="right">
         <SidebarHeader>
           <Logo />
         </SidebarHeader>
         <SidebarContent>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip="Dashboard" isActive>
+              <SidebarMenuButton asChild tooltip="لوحة التحكم" isActive>
                 <Link href="/admin/dashboard">
                   <LayoutDashboard />
-                  <span>Dashboard</span>
+                  <span>لوحة التحكم</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip="Subscriptions">
+              <SidebarMenuButton asChild tooltip="الاشتراكات">
                 <Link href="/admin/subscriptions">
                   <Mail />
-                  <span>Subscriptions</span>
+                  <span>الاشتراكات</span>
                   <SidebarMenuBadge>3</SidebarMenuBadge>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip="Courses">
+              <SidebarMenuButton asChild tooltip="الدورات">
                 <Link href="/admin/courses">
                   <BookCopy />
-                  <span>Courses</span>
+                  <span>الدورات</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip="Students">
+              <SidebarMenuButton asChild tooltip="الطلاب">
                 <Link href="/admin/students">
                   <Users />
-                  <span>Students</span>
+                  <span>الطلاب</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -84,24 +84,24 @@ export default function AdminLayout({
               <AvatarFallback>AD</AvatarFallback>
             </Avatar>
             <div className="flex flex-col group-data-[collapsible=icon]:hidden">
-              <span className="font-semibold text-sm">Admin User</span>
+              <span className="font-semibold text-sm">مسؤول النظام</span>
               <span className="text-xs text-muted-foreground">admin@al-manara.com</span>
             </div>
           </div>
            <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip="Settings">
+              <SidebarMenuButton asChild tooltip="الإعدادات">
                 <Link href="#">
                   <Settings />
-                  <span>Settings</span>
+                  <span>الإعدادات</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip="Logout">
+              <SidebarMenuButton asChild tooltip="تسجيل الخروج">
                 <Link href="/">
                   <LogOut />
-                  <span>Logout</span>
+                  <span>تسجيل الخروج</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -112,11 +112,11 @@ export default function AdminLayout({
         <header className="flex items-center justify-between p-4 border-b">
           <div className="flex items-center gap-4">
             <SidebarTrigger />
-            <h1 className="font-headline text-xl font-semibold">Admin Panel</h1>
+            <h1 className="font-headline text-xl font-semibold">لوحة تحكم المسؤول</h1>
           </div>
           <Button variant="ghost" size="icon">
             <Bell className="h-5 w-5" />
-            <span className="sr-only">Notifications</span>
+            <span className="sr-only">الإشعارات</span>
           </Button>
         </header>
         <div className="p-4 md:p-6">{children}</div>

@@ -8,9 +8,9 @@ import Link from "next/link";
 
 
 const recentSubscriptions: Subscription[] = [
-  { id: '1', name: 'Alice Johnson', email: 'alice@example.com', phone: '123-456-7890', course: 'Advanced Web Development', requestedDate: '2023-10-27', status: 'Pending' },
-  { id: '2', name: 'Bob Williams', email: 'bob@example.com', phone: '234-567-8901', course: 'Introduction to Data Science', requestedDate: '2023-10-26', status: 'Pending' },
-  { id: '3', name: 'Charlie Brown', email: 'charlie@example.com', phone: '345-678-9012', course: 'UI/UX Design Principles', requestedDate: '2023-10-26', status: 'Pending' },
+  { id: '1', name: 'Alice Johnson', email: 'alice@example.com', phone: '123-456-7890', course: 'تطوير الويب المتقدم', requestedDate: '2023-10-27', status: 'قيد الانتظار' },
+  { id: '2', name: 'Bob Williams', email: 'bob@example.com', phone: '234-567-8901', course: 'مقدمة في علم البيانات', requestedDate: '2023-10-26', status: 'قيد الانتظار' },
+  { id: '3', name: 'Charlie Brown', email: 'charlie@example.com', phone: '345-678-9012', course: 'مبادئ تصميم واجهة المستخدم وتجربة المستخدم', requestedDate: '2023-10-26', status: 'قيد الانتظار' },
 ];
 
 export default function AdminDashboardPage() {
@@ -19,46 +19,46 @@ export default function AdminDashboardPage() {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium">Total Students</CardTitle>
+                        <CardTitle className="text-sm font-medium">إجمالي الطلاب</CardTitle>
                         <Users className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
                         <div className="text-2xl font-bold">1,257</div>
-                        <p className="text-xs text-muted-foreground">+120 from last month</p>
+                        <p className="text-xs text-muted-foreground">+120 عن الشهر الماضي</p>
                     </CardContent>
                 </Card>
                 <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium">Courses</CardTitle>
+                        <CardTitle className="text-sm font-medium">الدورات</CardTitle>
                         <BookCopy className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
                         <div className="text-2xl font-bold">6</div>
-                        <p className="text-xs text-muted-foreground">+2 new this quarter</p>
+                        <p className="text-xs text-muted-foreground">+2 جديد هذا الربع</p>
                     </CardContent>
                 </Card>
                 <Card>
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium">Pending Subscriptions</CardTitle>
+                        <CardTitle className="text-sm font-medium">الاشتراكات المعلقة</CardTitle>
                         <Mail className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
                         <div className="text-2xl font-bold">3</div>
-                        <p className="text-xs text-muted-foreground">Needs review</p>
+                        <p className="text-xs text-muted-foreground">تحتاج مراجعة</p>
                     </CardContent>
                 </Card>
             </div>
             <Card>
                 <CardHeader className="flex flex-row items-center">
                     <div className="grid gap-2">
-                    <CardTitle className="font-headline">Recent Subscription Requests</CardTitle>
+                    <CardTitle className="font-headline">طلبات الاشتراك الأخيرة</CardTitle>
                     <CardDescription>
-                        New requests from potential students.
+                        طلبات جديدة من طلاب محتملين.
                     </CardDescription>
                     </div>
-                    <Button asChild size="sm" className="ml-auto gap-1">
+                    <Button asChild size="sm" className="mr-auto gap-1">
                     <Link href="/admin/subscriptions">
-                        View All
+                        عرض الكل
                         <ArrowUpRight className="h-4 w-4" />
                     </Link>
                     </Button>
@@ -67,10 +67,10 @@ export default function AdminDashboardPage() {
                     <Table>
                         <TableHeader>
                             <TableRow>
-                                <TableHead>Student</TableHead>
-                                <TableHead>Course</TableHead>
-                                <TableHead>Date</TableHead>
-                                <TableHead>Status</TableHead>
+                                <TableHead>الطالب</TableHead>
+                                <TableHead>الدورة</TableHead>
+                                <TableHead>التاريخ</TableHead>
+                                <TableHead>الحالة</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>

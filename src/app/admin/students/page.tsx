@@ -19,28 +19,28 @@ export default function AdminStudentsPage() {
     return (
         <Card>
             <CardHeader>
-                <CardTitle className="font-headline">Students</CardTitle>
-                <CardDescription>Manage student accounts and view their progress.</CardDescription>
+                <CardTitle className="font-headline">الطلاب</CardTitle>
+                <CardDescription>إدارة حسابات الطلاب وعرض تقدمهم.</CardDescription>
             </CardHeader>
             <CardContent>
                 <div className="flex items-center justify-between gap-4 mb-6">
                     <div className="relative w-full md:w-1/3">
-                        <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                        <Input placeholder="Search students..." className="pl-8" />
+                        <Search className="absolute right-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                        <Input placeholder="ابحث عن الطلاب..." className="pr-8" />
                     </div>
                     <Button>
-                        <PlusCircle className="mr-2 h-4 w-4" />
-                        Add Student
+                        <PlusCircle className="ml-2 h-4 w-4" />
+                        إضافة طالب
                     </Button>
                 </div>
                 <Table>
                     <TableHeader>
                         <TableRow>
-                            <TableHead>Name</TableHead>
-                            <TableHead>Email</TableHead>
-                            <TableHead>Enrolled Date</TableHead>
-                            <TableHead>Courses</TableHead>
-                            <TableHead><span className="sr-only">Actions</span></TableHead>
+                            <TableHead>الاسم</TableHead>
+                            <TableHead>البريد الإلكتروني</TableHead>
+                            <TableHead>تاريخ التسجيل</TableHead>
+                            <TableHead>الدورات</TableHead>
+                            <TableHead><span className="sr-only">الإجراءات</span></TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -58,11 +58,11 @@ export default function AdminStudentsPage() {
                                                 <span className="sr-only">Toggle menu</span>
                                             </Button>
                                         </DropdownMenuTrigger>
-                                        <DropdownMenuContent align="end">
-                                            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                                            <DropdownMenuItem>View Details</DropdownMenuItem>
-                                            <DropdownMenuItem>Edit</DropdownMenuItem>
-                                            <DropdownMenuItem className="text-destructive">Delete</DropdownMenuItem>
+                                        <DropdownMenuContent align="start">
+                                            <DropdownMenuLabel>الإجراءات</DropdownMenuLabel>
+                                            <DropdownMenuItem>عرض التفاصيل</DropdownMenuItem>
+                                            <DropdownMenuItem>تعديل</DropdownMenuItem>
+                                            <DropdownMenuItem className="text-destructive">حذف</DropdownMenuItem>
                                         </DropdownMenuContent>
                                     </DropdownMenu>
                                 </TableCell>

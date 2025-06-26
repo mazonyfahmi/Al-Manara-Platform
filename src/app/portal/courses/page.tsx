@@ -4,26 +4,26 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import type { Course } from "@/lib/types";
 
 const mockCourses: Omit<Course, 'aiHint' | 'longDescription' | 'description'>[] = [
-  { id: '1', title: 'Advanced Web Development', instructor: 'Dr. Evelyn Reed', duration: '12 Weeks', imageUrl: 'https://placehold.co/600x400.png' },
-  { id: '4', title: 'UI/UX Design Principles', instructor: 'Carlos Rodriguez', duration: '10 Weeks', imageUrl: 'https://placehold.co/600x400.png' },
-  { id: '2', title: 'Introduction to Data Science', instructor: 'Prof. Kenji Tanaka', duration: '8 Weeks', imageUrl: 'https://placehold.co/600x400.png' },
+  { id: '1', title: 'تطوير الويب المتقدم', instructor: 'د. إيفلين ريد', duration: '12 أسبوعًا', imageUrl: 'https://placehold.co/600x400.png' },
+  { id: '4', title: 'مبادئ تصميم واجهة المستخدم وتجربة المستخدم', instructor: 'كارلوس رودريغيز', duration: '10 أسابيع', imageUrl: 'https://placehold.co/600x400.png' },
+  { id: '2', title: 'مقدمة في علم البيانات', instructor: 'أ. كينجي تاناكا', duration: '8 أسابيع', imageUrl: 'https://placehold.co/600x400.png' },
 ];
 
 export default function MyCoursesPage() {
     return (
         <Card>
             <CardHeader>
-                <CardTitle className="font-headline">My Enrolled Courses</CardTitle>
-                <CardDescription>Here are all the courses you are currently enrolled in.</CardDescription>
+                <CardTitle className="font-headline">دوراتي المسجلة</CardTitle>
+                <CardDescription>هنا جميع الدورات التي أنت مسجل بها حاليًا.</CardDescription>
             </CardHeader>
             <CardContent>
                 <Table>
                     <TableHeader>
                         <TableRow>
-                            <TableHead>Course Title</TableHead>
-                            <TableHead>Instructor</TableHead>
-                            <TableHead>Duration</TableHead>
-                            <TableHead>Status</TableHead>
+                            <TableHead>عنوان الدورة</TableHead>
+                            <TableHead>المحاضر</TableHead>
+                            <TableHead>المدة</TableHead>
+                            <TableHead>الحالة</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -32,7 +32,7 @@ export default function MyCoursesPage() {
                                 <TableCell className="font-medium">{course.title}</TableCell>
                                 <TableCell>{course.instructor}</TableCell>
                                 <TableCell>{course.duration}</TableCell>
-                                <TableCell><Badge variant="secondary">In Progress</Badge></TableCell>
+                                <TableCell><Badge variant="secondary">قيد التقدم</Badge></TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

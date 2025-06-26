@@ -10,9 +10,9 @@ export default function SubscribePage() {
       <main className="flex-grow flex items-center justify-center py-12 px-4">
         <Card className="w-full max-w-lg">
           <CardHeader className="text-center">
-            <CardTitle className="font-headline text-3xl">Subscribe to a Course</CardTitle>
+            <CardTitle className="font-headline text-3xl">الاشتراك في دورة</CardTitle>
             <CardDescription>
-              Fill out the form below to begin your learning journey with us.
+              املأ النموذج أدناه لبدء رحلتك التعليمية معنا.
             </CardDescription>
           </CardHeader>
           <CardContent>

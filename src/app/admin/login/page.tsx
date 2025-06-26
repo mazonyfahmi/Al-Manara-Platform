@@ -11,24 +11,24 @@ export default function AdminLoginPage() {
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center">
           <Logo className="mb-4 justify-center" />
-          <CardTitle className="font-headline text-2xl">Admin Panel Login</CardTitle>
-          <CardDescription>For authorized personnel only.</CardDescription>
+          <CardTitle className="font-headline text-2xl">تسجيل دخول لوحة تحكم المسؤول</CardTitle>
+          <CardDescription>للموظفين المصرح لهم فقط.</CardDescription>
         </CardHeader>
         <CardContent>
           <form className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">البريد الإلكتروني</Label>
               <Input id="email" type="email" placeholder="admin@example.com" required />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">كلمة المرور</Label>
               <Input id="password" type="password" required />
             </div>
             <Button asChild type="submit" className="w-full">
-              <Link href="/admin/dashboard">Login</Link>
+              <Link href="/admin/dashboard">تسجيل الدخول</Link>
             </Button>
             <Button variant="outline" className="w-full" asChild>
-              <Link href="/">Back to Home</Link>
+              <Link href="/">العودة للرئيسية</Link>
             </Button>
           </form>
         </CardContent>

@@ -8,10 +8,10 @@ import { Menu } from 'lucide-react';
 import { useState } from 'react';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/courses', label: 'Courses' },
-  { href: '/portal/login', label: 'Student Portal' },
-  { href: '/admin/login', label: 'Admin Panel' },
+  { href: '/', label: 'الرئيسية' },
+  { href: '/courses', label: 'الدورات' },
+  { href: '/portal/login', label: 'بوابة الطالب' },
+  { href: '/admin/login', label: 'لوحة التحكم' },
 ];
 
 export default function Header() {
@@ -37,10 +37,10 @@ export default function Header() {
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle navigation menu</span>
+                <span className="sr-only">تبديل قائمة التنقل</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent side="left">
               <div className="flex flex-col gap-6 pt-10">
                 <Logo />
                 <nav className="flex flex-col gap-4">

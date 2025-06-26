@@ -32,33 +32,33 @@ export default function PortalLayout({
 }) {
   return (
     <SidebarProvider>
-      <Sidebar>
+      <Sidebar side="right">
         <SidebarHeader>
           <Logo />
         </SidebarHeader>
         <SidebarContent>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip="Dashboard" isActive>
+              <SidebarMenuButton asChild tooltip="لوحة التحكم" isActive>
                 <Link href="/portal/dashboard">
                   <Home />
-                  <span>Dashboard</span>
+                  <span>لوحة التحكم</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip="My Courses">
+              <SidebarMenuButton asChild tooltip="دوراتي">
                 <Link href="/portal/courses">
                   <Book />
-                  <span>My Courses</span>
+                  <span>دوراتي</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
              <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip="Live Lectures">
+              <SidebarMenuButton asChild tooltip="المحاضرات المباشرة">
                 <Link href="/portal/live/1">
                   <Video />
-                  <span>Live Lectures</span>
+                  <span>المحاضرات المباشرة</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -71,32 +71,32 @@ export default function PortalLayout({
               <AvatarFallback>SN</AvatarFallback>
             </Avatar>
             <div className="flex flex-col group-data-[collapsible=icon]:hidden">
-              <span className="font-semibold text-sm">Student Name</span>
+              <span className="font-semibold text-sm">اسم الطالب</span>
               <span className="text-xs text-muted-foreground">student@example.com</span>
             </div>
           </div>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip="Profile">
+              <SidebarMenuButton asChild tooltip="الملف الشخصي">
                 <Link href="#">
                   <User />
-                  <span>Profile</span>
+                  <span>الملف الشخصي</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip="Settings">
+              <SidebarMenuButton asChild tooltip="الإعدادات">
                 <Link href="#">
                   <Settings />
-                  <span>Settings</span>
+                  <span>الإعدادات</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild tooltip="Logout">
+              <SidebarMenuButton asChild tooltip="تسجيل الخروج">
                 <Link href="/">
                   <LogOut />
-                  <span>Logout</span>
+                  <span>تسجيل الخروج</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -106,7 +106,7 @@ export default function PortalLayout({
       <SidebarInset>
         <header className="flex items-center justify-between p-4 border-b">
            <SidebarTrigger />
-           <h1 className="font-headline text-xl font-semibold">Student Portal</h1>
+           <h1 className="font-headline text-xl font-semibold">بوابة الطالب</h1>
         </header>
         <div className="p-4 md:p-6">{children}</div>
       </SidebarInset>

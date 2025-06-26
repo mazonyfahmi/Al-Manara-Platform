@@ -16,15 +16,15 @@ export default function ChatWidget() {
       <SheetTrigger asChild>
         <Button
           variant="default"
-          className="fixed bottom-4 right-4 h-16 w-16 rounded-full shadow-lg bg-accent hover:bg-accent/90"
+          className="fixed bottom-4 left-4 h-16 w-16 rounded-full shadow-lg bg-accent hover:bg-accent/90"
         >
           <MessageSquare className="h-8 w-8 text-accent-foreground" />
-          <span className="sr-only">Open live chat</span>
+          <span className="sr-only">افتح المحادثة المباشرة</span>
         </Button>
       </SheetTrigger>
-      <SheetContent className="flex flex-col">
+      <SheetContent side="left" className="flex flex-col">
         <SheetHeader>
-          <SheetTitle className="font-headline">Live Chat Support</SheetTitle>
+          <SheetTitle className="font-headline">دعم المحادثة المباشرة</SheetTitle>
         </SheetHeader>
         <div className="flex-grow flex flex-col mt-4">
           <ScrollArea className="flex-grow h-full pr-4">
@@ -35,12 +35,12 @@ export default function ChatWidget() {
                   <AvatarFallback>SA</AvatarFallback>
                 </Avatar>
                 <div className="bg-muted p-3 rounded-lg max-w-xs">
-                  <p>Hello! How can I help you today?</p>
+                  <p>مرحباً! كيف يمكنني مساعدتك اليوم؟</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 justify-end">
                 <div className="bg-primary text-primary-foreground p-3 rounded-lg max-w-xs">
-                  <p>I have a question about a course.</p>
+                  <p>لدي سؤال حول دورة.</p>
                 </div>
                 <Avatar>
                   <AvatarFallback>U</AvatarFallback>
@@ -49,10 +49,10 @@ export default function ChatWidget() {
             </div>
           </ScrollArea>
           <form className="mt-4 flex gap-2">
-            <Input type="text" placeholder="Type your message..." className="flex-grow" />
+            <Input type="text" placeholder="اكتب رسالتك..." className="flex-grow" />
             <Button type="submit" size="icon" className="bg-accent hover:bg-accent/90">
               <Send className="h-4 w-4" />
-              <span className="sr-only">Send message</span>
+              <span className="sr-only">إرسال الرسالة</span>
             </Button>
           </form>
         </div>

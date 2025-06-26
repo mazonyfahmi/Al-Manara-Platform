@@ -29,7 +29,7 @@ export default function CourseCard({ course }: CourseCardProps) {
       </CardContent>
       <CardFooter>
         <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-          <Link href="/subscribe">Subscribe Now</Link>
+          <Link href="/subscribe">اشترك الآن</Link>
         </Button>
       </CardFooter>
     </Card>

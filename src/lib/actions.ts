@@ -20,7 +20,7 @@ export async function handleSubscription(values: z.infer<typeof formSchema>) {
   await new Promise(resolve => setTimeout(resolve, 1000));
 
   if (values.email.includes('fail')) {
-    return { success: false, message: 'This email address is blocked.' };
+    return { success: false, message: 'عنوان البريد الإلكتروني هذا محظور.' };
   }
 
   return { success: true };
